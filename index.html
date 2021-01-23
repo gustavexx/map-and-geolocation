@@ -1,0 +1,122 @@
+<!--
+Gustavo J Marcano, Student I.D 000812644
+Created January 23 , 2021
+index,html represents UI that renders the map session
+
+-->
+
+<!DOCTYPE html>
+<html lang="en-CA">
+
+<head>
+    <title>Maps and Geolocation</title>
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFTy4b58hDc-goz05HZwwQBPgOVvCQzSw&callback=initMap&libraries=&v=weekly"
+        defer>
+        </script>
+    <script src="js/education.js"></script>
+
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-12">
+                <div id="map-filter">
+                    <form id="mapFilterForm" onclick="filterMap()">
+                        <div>
+                            <input type="checkbox" name="all" id="all" value="all">
+                            <label for="all">All</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="elementary" id="elementary" value="elementary">
+                            <label for="elementary">Elementary</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="middle" id="middle" value="middle">
+                            <label for="middle">Middle</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="secondary" id="secondary" value="secondary">
+                            <label for="secondary">Secondary</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="postSecondary" id="postSecondary" value="postSecondary">
+                            <label for="postSecondary">Post-Secondary</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="alternative" id="alternative" value="alternative">
+                            <label for="alternative">Alternative</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="adult" id="adult" value="adult">
+                            <label for="adult">Adult</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="section23" id="section23" value="section23">
+                            <label for="section23">Section 23</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div id="map"></div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form id="geocode-form">
+                            <div class="row custom-direction-submit">
+                                <div class="col-lg-3 custom-directions">
+                                    <input type="text" id="nameOfStreet" name="nameOfStreet" class="form-control"
+                                        placeholder="Downtown">
+                                </div>
+                                <div class="col-lg-6 custom-directions">
+                                    <input type="text" id="address" name="address" class="form-control"
+                                        placeholder="321 King Street West, Hamilton, ON">
+                                </div>
+                                <div class="col-lg-3 custom-directions">
+                                    <input type="button" onclick="clear()" id="geocode"
+                                        class="btn btn-primary btn-block" value="Directions">
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-12">
+                <form id="right-panel">
+                    <div class="header">Directions</div>
+                    <div class="actions">
+                        <div class="content" id="map-directions-content"></div>
+                    </div>
+                    <button type="button" class="btn btn-block btn-secondary" id="map-directions-clear-button">Clear
+                        Directions</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
