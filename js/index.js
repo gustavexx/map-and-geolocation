@@ -318,7 +318,6 @@ function showPosition(position) {
         infoWindows.forEach((val, index) => {
             val.close();
         });
-        geocodedInfoWindow.close();
     });
 }
 
